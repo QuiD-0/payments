@@ -7,7 +7,6 @@ class Payment(
     val qualifier: String,
     val card: Card,
     val price: Int,
-    val currency: String,
     val status: PayStatus,
     val createdAt: LocalDateTime,
 ) {

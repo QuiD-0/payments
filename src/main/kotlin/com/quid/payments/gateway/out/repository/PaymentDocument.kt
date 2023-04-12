@@ -18,7 +18,6 @@ class PaymentDocument (
     private val cvc: String,
     private val cardHolderName: String,
     private val price: Int,
-    private val currency: String,
     private val status: PayStatus,
     private val createdAt: LocalDateTime,
 ){
