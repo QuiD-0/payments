@@ -10,16 +10,16 @@ import java.time.LocalDateTime
 @Document(collection = "payments")
 class PaymentDocument (
     @Id
-    val id: ObjectId,
-    val paymentId: Long,
-    val qualifier: String,
-    val cardNumber: String,
-    val expiryDate: LocalDate,
-    val cvc: String,
-    val cardHolderName: String,
-    val price: Int,
-    val currency: String,
-    val status: PayStatus,
-    val createdAt: LocalDateTime,
+    private val id: ObjectId,
+    private val paymentId: Long,
+    private val qualifier: String,
+    private val cardNumber: String,
+    private val expiryDate: LocalDate,
+    private val cvc: String,
+    private val cardHolderName: String,
+    private val price: Int,
+    private val currency: String,
+    private val status: PayStatus,
+    private val createdAt: LocalDateTime,
 ){
 }
