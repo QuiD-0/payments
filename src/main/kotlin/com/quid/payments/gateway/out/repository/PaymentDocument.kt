@@ -10,25 +10,25 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Document(collection = "payments")
-class PaymentDocument (
-    @Id private val id: ObjectId? = null,
+class PaymentDocument(
+    @Id private val id: ObjectId = ObjectId.get(),
     @Indexed(unique = true) private val requestId: String,
-    private val qualifier: String,
+    private val identifier: String,
     private val cardNumber: String,
     private val expiryDate: LocalDate,
     private val cvc: String,
     private val cardHolderName: String,
     private val price: Int,
     private val createdAt: LocalDateTime,
-){
+) {
     fun toDomain(): Payment {
         return Payment.of(
-            id = id?.toHexString(),
-            requestId = requestId,
-            qualifier = qualifier,
-            card = Card.of(cardNumber, expiryDate, cvc, cardHolderName),
-            price = price,
-            createdAt = createdAt,
+            id.toHexString(),
+            requestId,
+            identifier,
+            Card.of(cardNumber, expiryDate, cvc, cardHolderName),
+            price,
+            createdAt,
         )
     }
 
@@ -36,13 +36,13 @@ class PaymentDocument (
         fun of(payment: Payment): PaymentDocument {
             return PaymentDocument(
                 requestId = payment.requestId,
-                qualifier = payment.qualifier,
-                cardNumber = payment.card.cardNumber,
-                expiryDate = payment.card.expiryDate,
+                identifier = payment.identifier,
+                cardNumber = payment.card.number,
+                expiryDate = payment.card.expireDate,
                 cvc = payment.card.cvc,
-                cardHolderName = payment.card.cardHolderName,
+                cardHolderName = payment.card.holderName,
                 price = payment.price,
-                createdAt = payment.createdAt
+                createdAt = payment.createdAt,
             )
         }
     }
