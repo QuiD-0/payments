@@ -8,4 +8,14 @@ class Card (
     val cvc: String,
     val cardHolderName: String,
 ){
+    companion object {
+        fun of(
+            cardNumber: String,
+            expiryDate: LocalDate,
+            cvc: String,
+            cardHolderName: String
+        ): Card {
+            return Card(cardNumber, expiryDate, cvc, cardHolderName)
+        }
+    }
 }
