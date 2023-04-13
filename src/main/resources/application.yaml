@@ -4,3 +4,4 @@ spring:
       uri: mongodb://root:rootUser@localhost:27017/payment?authSource=admin
       username: root
       password: rootUser
+      auto-index-creation: true

@@ -3,19 +3,19 @@ package com.quid.payments.domain
 import java.time.LocalDate
 
 class Card (
-    val cardNumber: String,
-    val expiryDate: LocalDate,
+    val number: String,
+    val expireDate: LocalDate,
     val cvc: String,
-    val cardHolderName: String,
+    val holderName: String,
 ){
     companion object {
         fun of(
-            cardNumber: String,
-            expiryDate: LocalDate,
+            number: String,
+            expireDate: LocalDate,
             cvc: String,
-            cardHolderName: String
+            holderName: String
         ): Card {
-            return Card(cardNumber, expiryDate, cvc, cardHolderName)
+            return Card(number, expireDate, cvc, holderName)
         }
     }
 }
