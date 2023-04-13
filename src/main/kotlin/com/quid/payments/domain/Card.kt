@@ -15,6 +15,7 @@ class Card (
             cvc: String,
             holderName: String
         ): Card {
+            if (expireDate.isBefore(LocalDate.now())) throw IllegalArgumentException("expireDate is before today")
             return Card(number, expireDate, cvc, holderName)
         }
     }
