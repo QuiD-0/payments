@@ -1,6 +1,6 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://root:root!@mongo1:27017,mongo2:27018,mongo3:27019/payment?replicaSet=paymentReplicaSet
+      uri: mongodb://root:rootUser@localhost:27017/payment?authSource=admin
       username: root
-      password: root!
+      password: rootUser
