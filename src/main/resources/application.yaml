@@ -5,3 +5,5 @@ spring:
       username: root
       password: rootUser
       auto-index-creation: true
+server:
+  port: 9000
