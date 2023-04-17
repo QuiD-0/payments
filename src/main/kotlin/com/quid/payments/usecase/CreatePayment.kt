@@ -15,7 +15,9 @@ interface CreatePayment {
     ) : CreatePayment {
 
         override fun create(payment: Payment): Payment {
-            return paymentRepository.save(payment)
+            val savedPayment = paymentRepository.save(payment)
+            paymentRepository.completePayment(savedPayment.paymentId!!)
+            return savedPayment
         }
     }
 
