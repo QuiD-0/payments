@@ -35,7 +35,7 @@ class Payment(
         }
 
         fun of(
-            id: String?,
+            id: String,
             requestId: String,
             identifier: String,
             card: Card,
