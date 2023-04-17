@@ -38,16 +38,16 @@ class PaymentDocument(
     companion object {
         fun of(payment: Payment): PaymentDocument {
             return PaymentDocument(
-                id = payment.paymentId?.let { ObjectId(it) } ?: ObjectId.get(),
-                requestId = payment.requestId,
-                identifier = payment.identifier,
-                cardNumber = payment.card.number,
-                expiryDate = payment.card.expireDate,
-                cvc = payment.card.cvc,
-                cardHolderName = payment.card.holderName,
-                price = payment.price,
-                payStatus = payment.payStatus,
-                createdAt = payment.createdAt,
+                payment.paymentId?.let { ObjectId(it) } ?: ObjectId.get(),
+                payment.requestId,
+                payment.identifier,
+                payment.card.number,
+                payment.card.expireDate,
+                payment.card.cvc,
+                payment.card.holderName,
+                payment.price,
+                payment.payStatus,
+                payment.createdAt,
             )
         }
     }
