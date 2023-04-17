@@ -1,6 +1,7 @@
 package com.quid.payments.gateway.out.repository
 
 import com.quid.payments.domain.Card
+import com.quid.payments.domain.PayStatus
 import com.quid.payments.domain.Payment
 import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
@@ -19,6 +20,7 @@ class PaymentDocument(
     private val cvc: String,
     private val cardHolderName: String,
     private val price: Int,
+    private val payStatus: PayStatus,
     private val createdAt: LocalDateTime,
 ) {
     fun toDomain(): Payment {
@@ -28,6 +30,7 @@ class PaymentDocument(
             identifier,
             Card.of(cardNumber, expiryDate, cvc, cardHolderName),
             price,
+            payStatus,
             createdAt,
         )
     }
@@ -42,6 +45,7 @@ class PaymentDocument(
                 cvc = payment.card.cvc,
                 cardHolderName = payment.card.holderName,
                 price = payment.price,
+                payStatus = payment.payStatus,
                 createdAt = payment.createdAt,
             )
         }
