@@ -21,15 +21,13 @@ interface PaymentRepository {
 
         override fun completePayment(paymentId: String): Unit = run {
             mongoRepository.findByRequestIdOrNull(paymentId)
-                ?.let { PaymentDocument.of(it.toDomain().copy(PAYMENT_COMPLETED)) }
-                ?.toDomain()
+                ?.let { PaymentDocument.of(it.toDomain().copy(PAYMENT_COMPLETED)).toDomain() }
                 ?: throw IllegalStateException("Payment not found")
         }
 
         override fun cancelPayment(paymentId: String): Payment =
             mongoRepository.findByRequestIdOrNull(paymentId)
-                ?.let { PaymentDocument.of(it.toDomain().copy(PAYMENT_CANCELED)) }
-                ?.toDomain()
+                ?.let { PaymentDocument.of(it.toDomain().copy(PAYMENT_CANCELED)).toDomain() }
                 ?: throw IllegalStateException("Payment not found")
 
     }

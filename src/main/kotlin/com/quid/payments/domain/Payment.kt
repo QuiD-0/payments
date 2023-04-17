@@ -13,17 +13,17 @@ class Payment(
 ) {
     fun copy(payStatus: PayStatus): Payment {
         return Payment(
-            paymentId = paymentId,
-            requestId = requestId,
-            identifier = identifier,
-            card = card,
-            price = price,
-            payStatus = payStatus,
-            createdAt = createdAt,
+            paymentId,
+            requestId,
+            identifier,
+            card,
+            price,
+            payStatus,
+            createdAt,
         )
     }
 
-    companion object{
+    companion object {
         fun create(requestId: String, identifier: String, card: Card, price: Int): Payment {
             return Payment(
                 requestId = requestId,

@@ -6,15 +6,15 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 interface CancelPayment {
-    fun cancel(paymentId: String) : Payment
+    fun cancel(paymentId: String): Payment
 
     @Service
     @Transactional
     class PaymentCancelImpl(
         private val paymentRepository: PaymentRepository
     ) : CancelPayment {
-        override fun cancel(paymentId: String) : Payment {
-            return paymentRepository.cancelPayment(paymentId)
-        }
+
+        override fun cancel(paymentId: String): Payment = paymentRepository.cancelPayment(paymentId)
     }
+    
 }
