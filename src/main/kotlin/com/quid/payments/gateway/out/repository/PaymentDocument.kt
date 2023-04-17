@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 
 @Document(collection = "payments")
 class PaymentDocument(
-    @Id private val id: ObjectId = ObjectId.get(),
+    @Id private val id: ObjectId,
     @Indexed(unique = true) private val requestId: String,
     private val identifier: String,
     private val cardNumber: String,
@@ -38,6 +38,7 @@ class PaymentDocument(
     companion object {
         fun of(payment: Payment): PaymentDocument {
             return PaymentDocument(
+                id = payment.paymentId?.let { ObjectId(it) } ?: ObjectId.get(),
                 requestId = payment.requestId,
                 identifier = payment.identifier,
                 cardNumber = payment.card.number,
