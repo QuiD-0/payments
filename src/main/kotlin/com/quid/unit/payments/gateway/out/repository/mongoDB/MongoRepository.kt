@@ -1,6 +1,6 @@
-package com.quid.payments.gateway.out.repository.mongoDB
+package com.quid.unit.payments.gateway.out.repository.mongoDB
 
-import com.quid.payments.gateway.out.repository.PaymentDocument
+import com.quid.unit.payments.gateway.out.repository.PaymentDocument
 import org.springframework.data.repository.CrudRepository
 
 interface MongoRepository : CrudRepository<PaymentDocument, String> {

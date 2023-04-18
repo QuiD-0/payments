@@ -1,7 +1,7 @@
-package com.quid.payments.gateway.`in`.http.model
+package com.quid.unit.payments.gateway.`in`.http.model
 
-import com.quid.payments.domain.PayStatus
-import com.quid.payments.domain.Payment
+import com.quid.unit.payments.domain.PayStatus
+import com.quid.unit.payments.domain.Payment
 import java.time.LocalDateTime
 
 data class PaymentResponse(val requestId :String, val createdAt: LocalDateTime, val paymentId: String, val payStatus: PayStatus, val payAmount : Int){

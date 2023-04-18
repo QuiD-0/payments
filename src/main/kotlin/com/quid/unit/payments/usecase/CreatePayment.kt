@@ -1,7 +1,7 @@
-package com.quid.payments.usecase
+package com.quid.unit.payments.usecase
 
-import com.quid.payments.domain.Payment
-import com.quid.payments.gateway.out.repository.PaymentRepository
+import com.quid.unit.payments.domain.Payment
+import com.quid.unit.payments.gateway.out.repository.PaymentRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

@@ -1,4 +1,4 @@
-package com.quid.payments
+package com.quid.unit.payments
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

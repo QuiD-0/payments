@@ -1,11 +1,11 @@
-package com.quid.payments.gateway.`in`.http
+package com.quid.unit.payments.gateway.`in`.http
 
-import com.quid.payments.domain.Payment
-import com.quid.payments.gateway.`in`.http.model.PaymentCancelRequest
-import com.quid.payments.gateway.`in`.http.model.PaymentRequest
-import com.quid.payments.gateway.`in`.http.model.PaymentResponse
-import com.quid.payments.usecase.CancelPayment
-import com.quid.payments.usecase.CreatePayment
+import com.quid.unit.payments.domain.Payment
+import com.quid.unit.payments.gateway.`in`.http.model.PaymentCancelRequest
+import com.quid.unit.payments.gateway.`in`.http.model.PaymentRequest
+import com.quid.unit.payments.gateway.`in`.http.model.PaymentResponse
+import com.quid.unit.payments.usecase.CancelPayment
+import com.quid.unit.payments.usecase.CreatePayment
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

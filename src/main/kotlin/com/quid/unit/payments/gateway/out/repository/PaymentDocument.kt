@@ -1,8 +1,8 @@
-package com.quid.payments.gateway.out.repository
+package com.quid.unit.payments.gateway.out.repository
 
-import com.quid.payments.domain.Card
-import com.quid.payments.domain.PayStatus
-import com.quid.payments.domain.Payment
+import com.quid.unit.payments.domain.Card
+import com.quid.unit.payments.domain.PayStatus
+import com.quid.unit.payments.domain.Payment
 import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed

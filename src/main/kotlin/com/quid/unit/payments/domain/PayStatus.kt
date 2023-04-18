@@ -1,4 +1,4 @@
-package com.quid.payments.domain
+package com.quid.unit.payments.domain
 
 enum class PayStatus {
     PAYMENT_WAITING,

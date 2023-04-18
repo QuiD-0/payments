@@ -1,9 +1,9 @@
-package com.quid.payments.gateway.out.repository
+package com.quid.unit.payments.gateway.out.repository
 
-import com.quid.payments.domain.PayStatus.PAYMENT_CANCELED
-import com.quid.payments.domain.PayStatus.PAYMENT_COMPLETED
-import com.quid.payments.domain.Payment
-import com.quid.payments.gateway.out.repository.mongoDB.MongoRepository
+import com.quid.unit.payments.domain.PayStatus.PAYMENT_CANCELED
+import com.quid.unit.payments.domain.PayStatus.PAYMENT_COMPLETED
+import com.quid.unit.payments.domain.Payment
+import com.quid.unit.payments.gateway.out.repository.mongoDB.MongoRepository
 import org.springframework.stereotype.Repository
 
 interface PaymentRepository {

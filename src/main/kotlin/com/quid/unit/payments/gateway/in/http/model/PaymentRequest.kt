@@ -1,7 +1,7 @@
-package com.quid.payments.gateway.`in`.http.model
+package com.quid.unit.payments.gateway.`in`.http.model
 
-import com.quid.payments.domain.Card
-import com.quid.payments.domain.Payment
+import com.quid.unit.payments.domain.Card
+import com.quid.unit.payments.domain.Payment
 
 data class PaymentRequest(
     val requestId: String,

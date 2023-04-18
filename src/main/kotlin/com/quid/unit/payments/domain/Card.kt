@@ -1,4 +1,4 @@
-package com.quid.payments.domain
+package com.quid.unit.payments.domain
 
 import java.time.LocalDate
 
