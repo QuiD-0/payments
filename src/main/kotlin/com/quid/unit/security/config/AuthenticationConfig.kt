@@ -22,6 +22,7 @@ class AuthenticationConfig {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .csrf().disable().exceptionHandling()
+            .authenticationEntryPoint(CustomAuthenticationEntryPoint())
             .and()
             .addFilterBefore(JwtTokenFilter(), BasicAuthenticationFilter::class.java)
             .build()

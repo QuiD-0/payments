@@ -12,10 +12,15 @@ import org.springframework.web.filter.OncePerRequestFilter
 class JwtTokenFilter : OncePerRequestFilter() {
 
     override fun doFilterInternal(
-        request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain
+        request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain,
     ) {
-        val header: String = request.getHeader(HttpHeaders.AUTHORIZATION)
-        if (!header.startsWith("Bearer ")) throw RuntimeException("token not found")
+        val header: String = try {
+            request.getHeader(HttpHeaders.AUTHORIZATION)
+        } catch (e: Exception) {
+            throw IllegalArgumentException("Invalid token")
+        }
+
+        if (!header.startsWith("Bearer ")) throw IllegalArgumentException("Invalid token")
 
         val token = Token(header.substring(7))
             .also { it.validate() }

@@ -15,7 +15,7 @@ class TokenTest {
     @Test
     fun getIdentifier() {
         val token = Token.generate("quid")
-        assertEquals("quid", token.getsub())
+        assertEquals("quid", token.sub())
     }
 
     @Test
