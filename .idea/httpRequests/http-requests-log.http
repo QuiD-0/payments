@@ -1,0 +1,754 @@
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T180808.200.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T180241.200.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T180038.200.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T175729.200.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T175151.200.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T175019.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T174532.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T174505.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T162551.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T162311.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T161845.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T161748.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T161605.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T161433.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T161043.200.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T160915.404.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T160757.404.json
+
+###
+
+GET http://localhost:9000/token/issue/quid
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T160734.404.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+<> 2023-04-18T144848.500.json
+
+###
+
+GET http://localhost:9000/token
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T144846.200.txt
+
+###
+
+GET http://localhost:9000/token
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T144802.404.json
+
+###
+
+POST http://localhost:9000/payment/cancel
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "paymentId" : "test"
+}
+
+<> 2023-04-18T144757.500.json
+
+###
+
+GET http://localhost:9000/token
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-18T144746.404.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T113753.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T113740.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T113737.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId5",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T113713.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId5",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T113340.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId5",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T112900.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId4",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T112850.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId3",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T112707.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId3",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2025-03-31"
+  }
+}
+
+<> 2023-04-17T112505.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId3",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-17T112453.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-17T112414.500.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId2",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T174139.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId2",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T174138-1.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 201
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId2",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T174138.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T174102.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T174100.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T174008.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T173825.201.json
+
+###
+
+POST http://localhost:8080/payment
+Content-Type: application/json
+Content-Length: 200
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "requestId": "testId",
+  "identifier": "commerce",
+  "price": 11000,
+  "card": {
+    "holderName": "quid",
+    "number": "1234-5678-9012-3456",
+    "cvc": 123,
+    "expireDate": "2023-03-31"
+  }
+}
+
+<> 2023-04-13T173757.201.json
+
+###
+

@@ -10,11 +10,11 @@ import java.util.*
 
 class Token(private val token: String) {
 
-    fun token() = token
+    fun getToken() = token
 
     fun validate(): Boolean = extractAllClaims().id == SERVER_ID
 
-    fun getsub() : String = extractAllClaims().subject
+    fun sub(): String = extractAllClaims().subject
 
     private fun extractAllClaims(): Claims =
         Jwts.parserBuilder().setSigningKey(KEY).build().parseClaimsJws(token).body
@@ -31,5 +31,7 @@ class Token(private val token: String) {
                 Jwts.builder().setClaims(claims).setIssuedAt(Date.from(now)).signWith(KEY).compact()
             return Token(compact)
         }
+
+        fun toToken(tokenString: String): Token = Token(tokenString)
     }
 }
