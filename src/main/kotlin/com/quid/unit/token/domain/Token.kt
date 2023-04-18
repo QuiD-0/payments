@@ -31,7 +31,5 @@ class Token(private val token: String) {
                 Jwts.builder().setClaims(claims).setIssuedAt(Date.from(now)).signWith(KEY).compact()
             return Token(compact)
         }
-
-        fun toToken(tokenString: String): Token = Token(tokenString)
     }
 }

@@ -14,15 +14,10 @@ class JwtTokenFilter : OncePerRequestFilter() {
     override fun doFilterInternal(
         request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain
     ) {
-        val header: String = try {
-            request.getHeader(HttpHeaders.AUTHORIZATION)
-        } catch (e: Exception) {
-            throw RuntimeException("Authorization not found")
-        }
+        val header: String = request.getHeader(HttpHeaders.AUTHORIZATION)
         if (!header.startsWith("Bearer ")) throw RuntimeException("token not found")
 
-        val token = header.substring(7)
-            .let { Token.toToken(it) }
+        val token = Token(header.substring(7))
             .also { it.validate() }
 
         SecurityContextHolder.setContext(
