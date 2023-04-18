@@ -27,7 +27,7 @@ class PaymentController(
         return PaymentResponse.of(payment)
     }
 
-    @PostMapping
+    @PostMapping("/cancel")
     @ResponseStatus(HttpStatus.OK)
     fun cancelRequest(@RequestBody request: PaymentCancelRequest) : PaymentResponse {
         val payment : Payment = cancelPayment.cancel(request.paymentId)

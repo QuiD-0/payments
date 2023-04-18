@@ -14,19 +14,19 @@ interface PaymentRepository {
     @Repository
     class PaymentRepositoryImpl(private val mongoRepository: MongoRepository) : PaymentRepository {
         override fun save(payment: Payment): Payment =
-            mongoRepository.findByRequestIdOrNull(payment.requestId)
+            mongoRepository.findByRequestId(payment.requestId)
                 ?.let { throw IllegalStateException("Payment already exists") }
                 ?: mongoRepository.save(PaymentDocument.of(payment)).toDomain()
 
 
         override fun completePayment(paymentId: String): Unit = run {
-            mongoRepository.findByRequestIdOrNull(paymentId)
+            mongoRepository.findByRequestId(paymentId)
                 ?.let { PaymentDocument.of(it.toDomain().copy(PAYMENT_COMPLETED)).toDomain() }
                 ?: throw IllegalStateException("Payment not found")
         }
 
         override fun cancelPayment(paymentId: String): Payment =
-            mongoRepository.findByRequestIdOrNull(paymentId)
+            mongoRepository.findByRequestId(paymentId)
                 ?.let { PaymentDocument.of(it.toDomain().copy(PAYMENT_CANCELED)).toDomain() }
                 ?: throw IllegalStateException("Payment not found")
 
