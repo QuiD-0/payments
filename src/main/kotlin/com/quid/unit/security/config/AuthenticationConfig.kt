@@ -21,10 +21,10 @@ class AuthenticationConfig {
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
+            .addFilterBefore(JwtTokenFilter(), BasicAuthenticationFilter::class.java)
             .csrf().disable().exceptionHandling()
             .authenticationEntryPoint(CustomAuthenticationEntryPoint())
             .and()
-            .addFilterBefore(JwtTokenFilter(), BasicAuthenticationFilter::class.java)
             .build()
 
     @Bean

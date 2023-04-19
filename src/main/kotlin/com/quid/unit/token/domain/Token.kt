@@ -12,12 +12,13 @@ class Token(private val token: String) {
 
     fun getToken() = token
 
-    fun validate(): Boolean = extractAllClaims().id == SERVER_ID
+    fun validate() = if (extractAllClaims().id != SERVER_ID)
+        throw IllegalArgumentException("Invalid token") else Unit
 
     fun sub(): String = extractAllClaims().subject
 
     private fun extractAllClaims(): Claims =
-        Jwts.parserBuilder().setSigningKey(KEY).build().parseClaimsJws(token).body
+            Jwts.parserBuilder().setSigningKey(KEY).build().parseClaimsJws(token).body
 
     companion object {
         private const val SERVER_ID = "payment"
@@ -28,7 +29,7 @@ class Token(private val token: String) {
             val claims = Jwts.claims().setId(SERVER_ID).setSubject(identifier)
             val now = Instant.now()
             val compact =
-                Jwts.builder().setClaims(claims).setIssuedAt(Date.from(now)).signWith(KEY).compact()
+                    Jwts.builder().setClaims(claims).setIssuedAt(Date.from(now)).signWith(KEY).compact()
             return Token(compact)
         }
     }
