@@ -16,15 +16,10 @@ class AuthenticationConfig {
 
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain =
-        http.authorizeHttpRequests()
-            .anyRequest().authenticated()
-            .and()
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .addFilterBefore(JwtTokenFilter(), BasicAuthenticationFilter::class.java)
-            .csrf().disable().exceptionHandling()
-            .authenticationEntryPoint(CustomAuthenticationEntryPoint())
-            .and()
+            .csrf().disable()
             .build()
 
     @Bean

@@ -17,18 +17,16 @@ class JwtTokenFilter : OncePerRequestFilter() {
         val header: String = try {
             request.getHeader(HttpHeaders.AUTHORIZATION)
         } catch (e: Exception) {
-            throw IllegalArgumentException("Invalid token")
+            throw IllegalArgumentException("Authorization header is missing")
         }
 
-        if (!header.startsWith("Bearer ")) throw IllegalArgumentException("Invalid token")
+        if (!header.startsWith("Bearer ")) throw IllegalArgumentException("bearer token is missing")
 
         val token = Token(header.substring(7))
             .also { it.validate() }
 
-        SecurityContextHolder.setContext(
-            SecurityContextHolder.createEmptyContext().apply {
-                authentication = UsernamePasswordAuthenticationToken("sub", token.sub())
-            }
+        SecurityContextHolder.getContext().authentication = UsernamePasswordAuthenticationToken(
+            token.sub(), token.getToken()
         )
 
         filterChain.doFilter(request, response)
