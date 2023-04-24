@@ -1,7 +1,6 @@
 package com.quid.unit.token.domain
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class TokenTest {
@@ -21,6 +20,6 @@ class TokenTest {
     @Test
     fun validate() {
         val token = Token.generate("quid")
-        assertEquals(true, token.validate())
+        assertDoesNotThrow { token.validate() }
     }
 }
