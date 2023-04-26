@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository
 
 interface PaymentRepository {
     fun save(payment: Payment): Payment
-    fun completePayment(paymentId: String)
+    fun completePayment(paymentId: String): Payment
     fun cancelPayment(paymentId: String): Payment
 
     @Repository
@@ -19,14 +19,14 @@ interface PaymentRepository {
                 ?: mongoRepository.save(PaymentDocument.of(payment)).toDomain()
 
 
-        override fun completePayment(paymentId: String): Unit = run {
+        override fun completePayment(paymentId: String): Payment = run {
             mongoRepository.findByRequestId(paymentId)
                 ?.let {
                     mongoRepository.save(
                         PaymentDocument.of(
                             it.toDomain().copy(PAYMENT_COMPLETED)
                         )
-                    )
+                    ).toDomain()
                 }
                 ?: throw IllegalStateException("Payment not found")
         }
