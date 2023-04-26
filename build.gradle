@@ -28,6 +28,8 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation("ch.qos.logback:logback-classic")
+    implementation("org.slf4j:slf4j-api")
 
 }
 
