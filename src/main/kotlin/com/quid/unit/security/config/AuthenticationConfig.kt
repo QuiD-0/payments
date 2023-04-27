@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.web.SecurityFilterChain
-import org.springframework.web.filter.OncePerRequestFilter
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter
 
 
 @Configuration
@@ -20,7 +20,7 @@ class AuthenticationConfig {
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain =
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
-            .addFilterBefore(JwtTokenFilter(), OncePerRequestFilter::class.java)
+            .addFilterBefore(JwtTokenFilter(), BasicAuthenticationFilter::class.java)
             .csrf().disable()
             .build()
 
