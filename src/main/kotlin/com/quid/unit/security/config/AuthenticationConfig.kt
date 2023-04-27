@@ -24,10 +24,4 @@ class AuthenticationConfig {
             .csrf().disable()
             .build()
 
-
-    @Bean
-    fun webSecurityCustomizer(): WebSecurityCustomizer = WebSecurityCustomizer { web: WebSecurity ->
-        web.ignoring().requestMatchers("/token/issue/**", "/")
-    }
-
 }
