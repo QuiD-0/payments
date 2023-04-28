@@ -1,6 +1,6 @@
 export
 
-DOCKER_COMPOSE = cd docker && docker-compose
+DOCKER_COMPOSE = cd payments_docker && docker-compose
 
 .PHONY: start
 start: erase build up ## clean current environment, recreate dependencies and spin up again
