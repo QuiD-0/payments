@@ -1,9 +1,7 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb://root:rootUser@localhost:27017/payment?authSource=admin
-      username: root
-      password: rootUser
-      auto-index-creation: true
-server:
-  port: 9000
+  application:
+    name: payments
+  profiles:
+    active: local
+  config:
+    import: optional:configserver:http://130.162.136.116:8888
