@@ -14,6 +14,11 @@ class JwtTokenFilter : OncePerRequestFilter() {
     override fun doFilterInternal(
         request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain,
     ) {
+        if (urls.any { request.requestURI.contains(it) }) {
+            filterChain.doFilter(request, response)
+            return
+        }
+
         val header: String = try {
             request.getHeader(HttpHeaders.AUTHORIZATION)
         } catch (e: Exception) {
@@ -22,13 +27,18 @@ class JwtTokenFilter : OncePerRequestFilter() {
 
         if (!header.startsWith("Bearer ")) throw IllegalArgumentException("bearer token is missing")
 
-        val token = Token(header.substring(7))
-            .also { it.validate() }
+        val token = Token(header.substring(7)).also { it.validate() }
 
         SecurityContextHolder.getContext().authentication = UsernamePasswordAuthenticationToken(
             token.sub(), token.getToken()
         )
 
         filterChain.doFilter(request, response)
+    }
+
+    companion object {
+        private val urls = listOf(
+            "/token/issue",
+        )
     }
 }

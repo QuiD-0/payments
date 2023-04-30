@@ -15,7 +15,7 @@ interface CreatePayment {
     ) : CreatePayment {
 
         override fun create(payment: Payment): Payment = paymentRepository.save(payment)
-            .also { paymentRepository.completePayment(it.requestId) }
+            .let { paymentRepository.completePayment(it.requestId) }
     }
 
 }
