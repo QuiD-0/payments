@@ -14,10 +14,6 @@ class JwtTokenFilter : OncePerRequestFilter() {
     override fun doFilterInternal(
         request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain,
     ) {
-        if (urls.any { request.requestURI.contains(it) }) {
-            filterChain.doFilter(request, response)
-            return
-        }
 
         val header: String = try {
             request.getHeader(HttpHeaders.AUTHORIZATION)
@@ -36,9 +32,4 @@ class JwtTokenFilter : OncePerRequestFilter() {
         filterChain.doFilter(request, response)
     }
 
-    companion object {
-        private val urls = listOf(
-            "/token/issue",
-        )
-    }
 }
