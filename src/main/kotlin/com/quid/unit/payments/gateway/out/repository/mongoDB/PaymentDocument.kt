@@ -1,4 +1,4 @@
-package com.quid.unit.payments.gateway.out.repository
+package com.quid.unit.payments.gateway.out.repository.mongoDB
 
 import com.quid.unit.payments.domain.Card
 import com.quid.unit.payments.domain.PayStatus
@@ -20,7 +20,7 @@ class PaymentDocument(
     private val cvc: String,
     private val cardHolderName: String,
     private val price: Int,
-    private val payStatus: PayStatus,
+    private val payStatus: String,
     private val createdAt: LocalDateTime,
 ) {
     constructor(payment: Payment): this(
@@ -32,7 +32,7 @@ class PaymentDocument(
         payment.card.cvc,
         payment.card.holderName,
         payment.price,
-        payment.payStatus,
+        payment.payStatus.name,
         payment.createdAt,
     )
 
@@ -43,7 +43,7 @@ class PaymentDocument(
             identifier,
             Card(cardNumber, expiryDate, cvc, cardHolderName),
             price,
-            payStatus,
+            PayStatus.valueOf(payStatus),
             createdAt,
         )
     }

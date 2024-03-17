@@ -2,6 +2,7 @@ package com.quid.unit.payments.gateway.out.repository
 
 import com.quid.unit.payments.domain.Payment
 import com.quid.unit.payments.gateway.out.repository.mongoDB.MongoRepository
+import com.quid.unit.payments.gateway.out.repository.mongoDB.PaymentDocument
 import org.springframework.stereotype.Repository
 
 interface PaymentRepository {

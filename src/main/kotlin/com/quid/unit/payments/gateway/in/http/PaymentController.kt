@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/payment")
 class PaymentController(
-    private val payment: CreatePayment,
+    private val createPayment: CreatePayment,
     private val cancelPayment: CancelPayment
 ) {
     private val logger = LoggerFactory.getLogger(PaymentController::class.java)
@@ -21,7 +21,7 @@ class PaymentController(
     @ResponseStatus(HttpStatus.CREATED)
     fun paymentRequest(@RequestBody request: PaymentRequest) : PaymentResponse {
         logger.info("Payment request received: $request")
-        return payment(request.toDomain())
+        return createPayment(request.toDomain())
             .let { PaymentResponse.of(it) }
     }
 
