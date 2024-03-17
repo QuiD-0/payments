@@ -13,7 +13,10 @@ fun interface CancelPayment {
         private val paymentRepository: PaymentRepository
     ) : CancelPayment {
 
-        override fun invoke(paymentId: String): Payment = paymentRepository.cancelPayment(paymentId)
+        override fun invoke(paymentId: String): Payment =
+            paymentRepository.findByRequestId(paymentId)
+                .cancel()
+                .let { paymentRepository.save(it) }
     }
-    
+
 }

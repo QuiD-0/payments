@@ -23,6 +23,19 @@ class PaymentDocument(
     private val payStatus: PayStatus,
     private val createdAt: LocalDateTime,
 ) {
+    constructor(payment: Payment): this(
+        payment.paymentId?.let { ObjectId(it) } ?: ObjectId.get(),
+        payment.requestId,
+        payment.identifier,
+        payment.card.number,
+        payment.card.expireDate,
+        payment.card.cvc,
+        payment.card.holderName,
+        payment.price,
+        payment.payStatus,
+        payment.createdAt,
+    )
+
     fun toDomain(): Payment {
         return Payment.of(
             id.toHexString(),
@@ -33,22 +46,5 @@ class PaymentDocument(
             payStatus,
             createdAt,
         )
-    }
-
-    companion object {
-        fun of(payment: Payment): PaymentDocument {
-            return PaymentDocument(
-                payment.paymentId?.let { ObjectId(it) } ?: ObjectId.get(),
-                payment.requestId,
-                payment.identifier,
-                payment.card.number,
-                payment.card.expireDate,
-                payment.card.cvc,
-                payment.card.holderName,
-                payment.price,
-                payment.payStatus,
-                payment.createdAt,
-            )
-        }
     }
 }

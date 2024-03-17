@@ -9,7 +9,7 @@ class TokenIssueTest {
 
     @Test
     fun issueToken() {
-        val token = token.issue("quid")
+        val token = token("quid")
         println(token)
         assertNotNull(token)
     }

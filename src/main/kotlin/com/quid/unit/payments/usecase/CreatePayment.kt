@@ -9,13 +9,13 @@ fun interface CreatePayment {
     operator fun invoke(payment: Payment): Payment
 
     @Service
-    @Transactional
     class PaymentCreateImpl(
         private val paymentRepository: PaymentRepository
     ) : CreatePayment {
 
-        override fun invoke(payment: Payment): Payment = paymentRepository.save(payment)
-            .let { paymentRepository.completePayment(it.requestId) }
+        override fun invoke(payment: Payment): Payment =
+            paymentRepository.checkPaymentNotExists(payment.requestId)
+                .let { paymentRepository.save(payment) }
     }
 
 }
