@@ -8,9 +8,9 @@ import java.time.Instant
 import java.util.*
 
 
-class Token(private val token: String) {
-
-    fun getToken() = token
+data class Token(
+    val token: String
+) {
 
     fun validate() = if (extractAllClaims().id != SERVER_ID)
         throw IllegalArgumentException("Invalid token") else Unit

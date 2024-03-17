@@ -26,7 +26,7 @@ class JwtTokenFilter : OncePerRequestFilter() {
         val token = Token(header.substring(7)).also { it.validate() }
 
         SecurityContextHolder.getContext().authentication = UsernamePasswordAuthenticationToken(
-            token.sub(), token.getToken()
+            token.sub(), token.token
         )
 
         filterChain.doFilter(request, response)

@@ -5,16 +5,15 @@ import com.quid.unit.payments.gateway.out.repository.PaymentRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
-interface CancelPayment {
-    fun cancel(paymentId: String): Payment
+fun interface CancelPayment {
+    operator fun invoke(paymentId: String): Payment
 
     @Service
-    @Transactional
     class PaymentCancelImpl(
         private val paymentRepository: PaymentRepository
     ) : CancelPayment {
 
-        override fun cancel(paymentId: String): Payment = paymentRepository.cancelPayment(paymentId)
+        override fun invoke(paymentId: String): Payment = paymentRepository.cancelPayment(paymentId)
     }
     
 }

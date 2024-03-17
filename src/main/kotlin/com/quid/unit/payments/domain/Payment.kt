@@ -2,7 +2,7 @@ package com.quid.unit.payments.domain
 
 import java.time.LocalDateTime
 
-class Payment(
+data class Payment(
     val paymentId: String? = null,
     val requestId: String,
     val identifier: String,
@@ -11,18 +11,6 @@ class Payment(
     val payStatus: PayStatus,
     val createdAt: LocalDateTime = LocalDateTime.now(),
 ) {
-    fun copy(payStatus: PayStatus): Payment {
-        return Payment(
-            paymentId,
-            requestId,
-            identifier,
-            card,
-            price,
-            payStatus,
-            createdAt,
-        )
-    }
-
     companion object {
         fun create(requestId: String, identifier: String, card: Card, price: Int): Payment {
             return Payment(

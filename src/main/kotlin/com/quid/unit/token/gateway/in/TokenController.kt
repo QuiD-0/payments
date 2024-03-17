@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/token")
-class TokenController(private val token : TokenIssue) {
+class TokenController(private val tokenIssue : TokenIssue) {
     private val logger = LoggerFactory.getLogger(TokenController::class.java)
 
     @GetMapping("/issue/{identifier}")
     fun issueToken(@PathVariable(name = "identifier") identifier : String) : Token {
         logger.info("Token issue request received: $identifier")
-        return token.issue(identifier)
+        return tokenIssue(identifier)
     }
 
 }

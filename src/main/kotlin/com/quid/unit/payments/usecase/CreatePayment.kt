@@ -5,8 +5,8 @@ import com.quid.unit.payments.gateway.out.repository.PaymentRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
-interface CreatePayment {
-    fun create(payment: Payment): Payment
+fun interface CreatePayment {
+    operator fun invoke(payment: Payment): Payment
 
     @Service
     @Transactional
@@ -14,7 +14,7 @@ interface CreatePayment {
         private val paymentRepository: PaymentRepository
     ) : CreatePayment {
 
-        override fun create(payment: Payment): Payment = paymentRepository.save(payment)
+        override fun invoke(payment: Payment): Payment = paymentRepository.save(payment)
             .let { paymentRepository.completePayment(it.requestId) }
     }
 
