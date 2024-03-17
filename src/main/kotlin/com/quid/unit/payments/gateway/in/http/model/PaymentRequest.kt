@@ -9,10 +9,5 @@ data class PaymentRequest(
     val price: Int,
     val card: Card,
     ) {
-    fun toDomain(): Payment {
-        if (requestId.isBlank()) throw IllegalArgumentException("requestId is blank")
-        if (identifier.isBlank()) throw IllegalArgumentException("qualifier is blank")
-        if (price <= 0) throw IllegalArgumentException("price is not positive")
-        return Payment.create(requestId, identifier, card, price)
-    }
+    fun toDomain(): Payment = Payment(null, requestId, identifier, card, price)
 }

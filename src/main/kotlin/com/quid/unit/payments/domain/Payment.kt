@@ -8,33 +8,16 @@ data class Payment(
     val identifier: String,
     val card: Card,
     val price: Int,
-    val payStatus: PayStatus,
+    val payStatus: PayStatus = PayStatus.PAYMENT_WAITING,
     val createdAt: LocalDateTime = LocalDateTime.now(),
 ) {
+    init {
+        require(requestId.isNotBlank()) { "requestId is blank" }
+        require(identifier.isNotBlank()) { "identifier is blank" }
+        require(price > 0) { "price is not positive" }
+    }
+
     fun cancel(): Payment = copy(payStatus = PayStatus.PAYMENT_CANCELED)
     fun pay(): Payment = copy(payStatus = PayStatus.PAYMENT_COMPLETED)
 
-    companion object {
-        fun create(requestId: String, identifier: String, card: Card, price: Int): Payment {
-            return Payment(
-                requestId = requestId,
-                identifier = identifier,
-                card = card,
-                payStatus = PayStatus.PAYMENT_WAITING,
-                price = price,
-            )
-        }
-
-        fun of(
-            id: String,
-            requestId: String,
-            identifier: String,
-            card: Card,
-            price: Int,
-            payStatus: PayStatus,
-            createdAt: LocalDateTime
-        ): Payment {
-            return Payment(id, requestId, identifier, card, price, payStatus, createdAt)
-        }
-    }
 }

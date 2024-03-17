@@ -37,11 +37,11 @@ class PaymentDocument(
     )
 
     fun toDomain(): Payment {
-        return Payment.of(
+        return Payment(
             id.toHexString(),
             requestId,
             identifier,
-            Card.of(cardNumber, expiryDate, cvc, cardHolderName),
+            Card(cardNumber, expiryDate, cvc, cardHolderName),
             price,
             payStatus,
             createdAt,
