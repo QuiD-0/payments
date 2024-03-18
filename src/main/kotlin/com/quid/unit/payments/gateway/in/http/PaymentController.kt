@@ -1,6 +1,5 @@
 package com.quid.unit.payments.gateway.`in`.http
 
-import com.quid.unit.payments.domain.Payment
 import com.quid.unit.payments.gateway.`in`.http.model.PaymentCancelRequest
 import com.quid.unit.payments.gateway.`in`.http.model.PaymentRequest
 import com.quid.unit.payments.gateway.`in`.http.model.PaymentResponse
