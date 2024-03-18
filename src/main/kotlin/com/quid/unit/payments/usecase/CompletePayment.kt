@@ -13,9 +13,8 @@ fun interface CompletePayment {
     ) : CompletePayment{
         override fun invoke(request: Payment): Payment {
             val payment = paymentRepository.findByRequestId(request.requestId)
-            if (payment != request) {
-                throw IllegalStateException("pay information not matched")
-            }
+            require(payment.isSame(request)) { "Payment is not same" }
+
             return payment.pay()
                 .let { paymentRepository.save(it) }
         }

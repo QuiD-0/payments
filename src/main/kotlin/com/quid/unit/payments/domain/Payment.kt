@@ -43,4 +43,8 @@ data class Payment(
         result = 31 * result + createdAt.hashCode()
         return result
     }
+
+    fun isSame(request: Payment): Boolean {
+        return request == this
+    }
 }
