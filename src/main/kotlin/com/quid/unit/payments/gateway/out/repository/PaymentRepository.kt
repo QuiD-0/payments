@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 
 interface PaymentRepository {
     fun save(payment: Payment): Payment
-    fun findByRequestId(paymentId: String): Payment
+    fun findByRequestId(requestId: String): Payment
     fun checkPaymentNotExists(requestId: String): Boolean
 
 
@@ -17,9 +17,9 @@ interface PaymentRepository {
     ) : PaymentRepository {
         override fun save(payment: Payment): Payment = mongoRepository.save(PaymentDocument(payment)).toDomain()
 
-        override fun findByRequestId(paymentId: String): Payment =
-            mongoRepository.findByRequestId(paymentId)?.toDomain()
-                ?: throw IllegalAccessException("Payment not found for requestId: $paymentId")
+        override fun findByRequestId(requestId: String): Payment =
+            mongoRepository.findByRequestId(requestId)?.toDomain()
+                ?: throw IllegalAccessException("Payment not found for requestId: $requestId")
 
         override fun checkPaymentNotExists(requestId: String): Boolean =
             mongoRepository.findByRequestId(requestId) == null

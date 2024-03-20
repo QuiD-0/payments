@@ -11,8 +11,8 @@ class StubPaymentRepository: PaymentRepository {
         return payment
     }
 
-    override fun findByRequestId(paymentId: String): Payment {
-        return payments.find { it.requestId == paymentId } ?: throw IllegalAccessException("Payment not found")
+    override fun findByRequestId(requestId: String): Payment {
+        return payments.find { it.requestId == requestId } ?: throw IllegalAccessException("Payment not found")
     }
 
     override fun checkPaymentNotExists(requestId: String): Boolean {
