@@ -31,7 +31,6 @@ data class Payment(
         if (paymentId != other.paymentId) return false
         if (requestId != other.requestId) return false
         if (price != other.price) return false
-        if (createdAt != other.createdAt) return false
 
         return true
     }
@@ -40,7 +39,6 @@ data class Payment(
         var result = paymentId?.hashCode() ?: 0
         result = 31 * result + requestId.hashCode()
         result = 31 * result + price
-        result = 31 * result + createdAt.hashCode()
         return result
     }
 
