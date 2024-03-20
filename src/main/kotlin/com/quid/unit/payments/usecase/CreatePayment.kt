@@ -14,8 +14,9 @@ fun interface CreatePayment {
     ) : CreatePayment {
 
         override fun invoke(payment: Payment): Payment =
-            paymentRepository.checkPaymentNotExists(payment.requestId)
-                .let { paymentRepository.save(payment) }
+            takeIf { paymentRepository.checkPaymentNotExists(payment.requestId) }
+                ?.let { paymentRepository.save(payment) }
+                ?: throw IllegalAccessException("Payment already exists")
     }
 
 }
