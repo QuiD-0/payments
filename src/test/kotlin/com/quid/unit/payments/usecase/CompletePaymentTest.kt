@@ -53,7 +53,7 @@ class CompletePaymentTest {
             card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
             price = 1000,
         )
-        assertThrows<IllegalArgumentException> { completePayment(payment) }
+        assertThrows<IllegalAccessException> { completePayment(payment) }
 
     }
 }
