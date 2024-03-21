@@ -18,13 +18,8 @@ class CancelPaymentTest {
 
     @BeforeEach
     fun setUp() {
-        val payment = Payment(
-            paymentId = "testId",
-            requestId = "123",
-            identifier = "123",
-            card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
-            price = 100,
-        )
+        val payment = createPayment(100)
+
         paymentRepository.save(payment)
     }
 
@@ -32,6 +27,7 @@ class CancelPaymentTest {
     @DisplayName("결제 취소")
     fun cancel_payment_success() {
         val result = cancelPayment("123")
+
         assertEquals(result.payStatus, PayStatus.PAYMENT_CANCELED)
     }
     
@@ -39,5 +35,15 @@ class CancelPaymentTest {
     @DisplayName("결제 실패 - 데이터 검색 실패")
     fun cancel_payment_fail_on_data_search_fail() {
         assertThrows<IllegalAccessException> { cancelPayment("1234") }
+    }
+
+    private fun createPayment(price: Int): Payment {
+        return Payment(
+            paymentId = "testId",
+            requestId = "123",
+            identifier = "123",
+            card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
+            price = price,
+        )
     }
 }

@@ -39,7 +39,7 @@ class PaymentController(
     @ResponseStatus(HttpStatus.OK)
     fun cancelRequest(@RequestBody request: PaymentCancelRequest) : PaymentResponse {
         logger.info("Payment cancel request received: $request")
-        return cancelPayment(request.requestId)
+        return cancelPayment(request.paymentId)
             .let { PaymentResponse.of(it) }
     }
 }

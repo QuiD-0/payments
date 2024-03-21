@@ -19,13 +19,7 @@ class CreatePaymentTest{
     @Test
     @DisplayName("결제 생성")
     fun create_payment_success(){
-        val payment = Payment(
-            paymentId = "testId",
-            requestId = "123",
-            identifier = "123",
-            card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
-            price = 100,
-        )
+        val payment = createPayment()
         val result = createPayment(payment)
         assertEquals(result.payStatus, PayStatus.PAYMENT_WAITING)
     }
@@ -33,14 +27,16 @@ class CreatePaymentTest{
     @Test
     @DisplayName("결제 실패 - 데이터 중복")
     fun create_payment_fail_on_data_duplicate(){
-        val payment = Payment(
-            paymentId = "testId",
-            requestId = "123",
-            identifier = "123",
-            card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
-            price = 100,
-        )
+        val payment = createPayment()
         paymentRepository.save(payment)
         assertThrows<IllegalAccessException> { createPayment(payment) }
     }
+
+    private fun createPayment() = Payment(
+        paymentId = "testId",
+        requestId = "123",
+        identifier = "123",
+        card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
+        price = 100,
+    )
 }

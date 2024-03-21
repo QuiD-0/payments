@@ -19,41 +19,35 @@ class CompletePaymentTest {
 
     @BeforeEach
     fun setup() {
-        val payment = Payment(
-            paymentId = "testId",
-            requestId = "123",
-            identifier = "123",
-            card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
-            price = 100,
-        )
+        val payment = createPayment(100)
         paymentRepository.save(payment)
     }
 
     @Test
     @DisplayName("결제 완료")
     fun complete_payment_success() {
-        val payment = Payment(
-            paymentId = "testId",
-            requestId = "123",
-            identifier = "123",
-            card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
-            price = 100,
-        )
+        val payment = createPayment(100)
+
         val result = completePayment(payment)
+
         assertEquals(result.payStatus, PayStatus.PAYMENT_COMPLETED)
     }
 
     @Test
     @DisplayName("결제 실패 - 데이터 불일치")
     fun complete_payment_fail_on_data_mismatch() {
-        val payment = Payment(
+        val payment = createPayment(1000)
+
+        assertThrows<IllegalAccessException> { completePayment(payment) }
+    }
+
+    private fun createPayment(price: Int): Payment {
+        return Payment(
             paymentId = "testId",
             requestId = "123",
             identifier = "123",
             card = Card("123", LocalDate.now().plusDays(1), "123", "testUser"),
-            price = 1000,
+            price = price,
         )
-        assertThrows<IllegalAccessException> { completePayment(payment) }
-
     }
 }
